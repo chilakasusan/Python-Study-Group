@@ -1,0 +1,568 @@
+    "# ---------------- Task 1: Create the Variables ----------------\n",
+    "farm_location = \"Kaduna\"\n",
+    "crop_type = \"Maize\"\n",
+    "temperature = 31                      # degrees Celsius\n",
+    "rainfall = 18                         # mm\n",
+    "humidity = 72                         # percent\n",
+    "wind_speed = 16                       # km/h\n",
+    "min_rainfall_required = 20            # mm\n",
+    "max_safe_temperature = 35             # degrees Celsius\n",
+    "irrigation_available = True           # boolean\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "f2b74013",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Rainfall Difference (before update): 2 mm\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ---------------- Task 2: Calculate Rainfall Difference ----------------\n",
+    "rainfall_difference = min_rainfall_required - rainfall\n",
+    "print(\"Rainfall Difference (before update):\", rainfall_difference, \"mm\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "d76498e6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Temperature Margin: 4 degrees C\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ---------------- Task 3: Calculate Temperature Margin ----------------\n",
+    "temperature_margin = max_safe_temperature - temperature\n",
+    "print(\"Temperature Margin:\", temperature_margin, \"degrees C\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "bd98bfd4",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Updated Rainfall: 26 mm\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ---------------- Task 4: Update Rainfall ----------------\n",
+    "rainfall += 8                         # additional 8mm rainfall received\n",
+    "print(\"Updated Rainfall:\", rainfall, \"mm\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "76ac6e4a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Rainfall Requirement Met: True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ---------------- Task 5: Check if Rainfall Requirement Has Been Met ----------------\n",
+    "rainfall_requirement_met = rainfall >= min_rainfall_required\n",
+    "print(\"Rainfall Requirement Met:\", rainfall_requirement_met)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "c961bb36",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Temperature Within Safe Limit: True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ---------------- Task 6: Check if Temperature Is Within the Safe Limit ----------------\n",
+    "temperature_within_safe_limit = temperature <= max_safe_temperature\n",
+    "print(\"Temperature Within Safe Limit:\", temperature_within_safe_limit)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "01ddcd7b",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Growing Conditions Favorable: True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ---------------- Task 7: Determine if Crop Conditions Are Favorable ----------------\n",
+    "growing_conditions_favorable = rainfall_requirement_met and temperature_within_safe_limit\n",
+    "print(\"Growing Conditions Favorable:\", growing_conditions_favorable)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "d7a6ea76",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Farmer Action Required: False\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ---------------- Task 8: Determine if Farmer Action Is Required ----------------\n",
+    "farmer_action_required = (not growing_conditions_favorable) or (not irrigation_available)\n",
+    "print(\"Farmer Action Required:\", farmer_action_required)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "c0f05370",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "==========================================================\n",
+      "          WEATHER IMPACT ANALYSIS REPORT\n",
+      "==========================================================\n",
+      "\n",
+      "Farm Location: Kaduna\n",
+      "\n",
+      "Crop Type: Maize\n",
+      "\n",
+      "Temperature: 31 degrees C\n",
+      "\n",
+      "Updated Rainfall: 26 mm\n",
+      "\n",
+      "Humidity: 72 %\n",
+      "\n",
+      "Wind Speed: 16 km/h\n",
+      "\n",
+      "Rainfall Difference: 2 mm\n",
+      "\n",
+      "Temperature Margin: 4 degrees C\n",
+      "\n",
+      "Minimum Rainfall Requirement: 20 mm\n",
+      "\n",
+      "Maximum Safe Temperature: 35 degrees C\n",
+      "\n",
+      "Rainfall Requirement Met: True\n",
+      "\n",
+      "Temperature Within Safe Limit: True\n",
+      "\n",
+      "Irrigation Available: True\n",
+      "\n",
+      "Growing Conditions Favorable: True\n",
+      "\n",
+      "Farmer Action Required: False\n",
+      "\n",
+      "==========================================================\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ---------------- Task 9: Generate the Weather Impact Report ----------------\n",
+    "print(\"\\n==========================================================\")\n",
+    "print(\"          WEATHER IMPACT ANALYSIS REPORT\")\n",
+    "print(\"==========================================================\\n\")\n",
+    "print(\"Farm Location:\", farm_location)\n",
+    "print(\"\\nCrop Type:\", crop_type)\n",
+    "print(\"\\nTemperature:\", temperature, \"degrees C\")\n",
+    "print(\"\\nUpdated Rainfall:\", rainfall, \"mm\")\n",
+    "print(\"\\nHumidity:\", humidity, \"%\")\n",
+    "print(\"\\nWind Speed:\", wind_speed, \"km/h\")\n",
+    "print(\"\\nRainfall Difference:\", rainfall_difference, \"mm\")\n",
+    "print(\"\\nTemperature Margin:\", temperature_margin, \"degrees C\")\n",
+    "print(\"\\nMinimum Rainfall Requirement:\", min_rainfall_required, \"mm\")\n",
+    "print(\"\\nMaximum Safe Temperature:\", max_safe_temperature, \"degrees C\")\n",
+    "print(\"\\nRainfall Requirement Met:\", rainfall_requirement_met)\n",
+    "print(\"\\nTemperature Within Safe Limit:\", temperature_within_safe_limit)\n",
+    "print(\"\\nIrrigation Available:\", irrigation_available)\n",
+    "print(\"\\nGrowing Conditions Favorable:\", growing_conditions_favorable)\n",
+    "print(\"\\nFarmer Action Required:\", farmer_action_required)\n",
+    "print(\"\\n==========================================================\\n\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "041e1870",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2bb668d6",
+   "metadata": {},
+   "source": [
+    "# BONUS CHALLENGE - FARM 2 - BENUE (RICE)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "d156dfa9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# ---------------- Task 1: Create the Variables ----------------\n",
+    "farm_location_2 = \"Benue\"\n",
+    "crop_type_2 = \"Rice\"\n",
+    "temperature_2 = 38                    # degrees Celsius\n",
+    "rainfall_2 = 12                       # mm\n",
+    "humidity_2 = 68                       # percent\n",
+    "wind_speed_2 = 21                     # km/h\n",
+    "min_rainfall_required_2 = 25          # mm\n",
+    "max_safe_temperature_2 = 35           # degrees Celsius\n",
+    "irrigation_available_2 = False        # boolean"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "35042efc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# ---------------- Task 2: Calculate Rainfall Difference ----------------\n",
+    "rainfall_difference_2 = min_rainfall_required_2 - rainfall_2\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "7a9f49dd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# ---------------- Task 3: Calculate Temperature Margin ----------------\n",
+    "temperature_margin_2 = max_safe_temperature_2 - temperature_2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "e2650dc4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# ---------------- Task 4: Update Rainfall ----------------\n",
+    "rainfall_2 += 8                       # additional 8mm rainfall received"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "e2e1f3fd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# ---------------- Task 5: Check if Rainfall Requirement Has Been Met ----------------\n",
+    "rainfall_requirement_met_2 = rainfall_2 >= min_rainfall_required_2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "7e9c85da",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# ---------------- Task 6: Check if Temperature Is Within the Safe Limit ----------------\n",
+    "temperature_within_safe_limit_2 = temperature_2 <= max_safe_temperature_2\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "16b11707",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# ---------------- Task 7: Determine if Crop Conditions Are Favorable ----------------\n",
+    "growing_conditions_favorable_2 = rainfall_requirement_met_2 and temperature_within_safe_limit_2\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "21207de1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# ---------------- Task 8: Determine if Farmer Action Is Required ----------------\n",
+    "farmer_action_required_2 = (not growing_conditions_favorable_2) or (not irrigation_available_2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "28cfbdd7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "==========================================================\n",
+      "          WEATHER IMPACT ANALYSIS REPORT\n",
+      "==========================================================\n",
+      "\n",
+      "Farm Location: Benue\n",
+      "\n",
+      "Crop Type: Rice\n",
+      "\n",
+      "Temperature: 38 degrees C\n",
+      "\n",
+      "Updated Rainfall: 20 mm\n",
+      "\n",
+      "Humidity: 68 %\n",
+      "\n",
+      "Wind Speed: 21 km/h\n",
+      "\n",
+      "Rainfall Difference: 13 mm\n",
+      "\n",
+      "Temperature Margin: -3 degrees C\n",
+      "\n",
+      "Minimum Rainfall Requirement: 25 mm\n",
+      "\n",
+      "Maximum Safe Temperature: 35 degrees C\n",
+      "\n",
+      "Rainfall Requirement Met: False\n",
+      "\n",
+      "Temperature Within Safe Limit: False\n",
+      "\n",
+      "Irrigation Available: False\n",
+      "\n",
+      "Growing Conditions Favorable: False\n",
+      "\n",
+      "Farmer Action Required: True\n",
+      "\n",
+      "==========================================================\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "\n",
+    "# ---------------- Task 9: Generate the Weather Impact Report ----------------\n",
+    "print(\"==========================================================\")\n",
+    "print(\"          WEATHER IMPACT ANALYSIS REPORT\")\n",
+    "print(\"==========================================================\\n\")\n",
+    "print(\"Farm Location:\", farm_location_2)\n",
+    "print(\"\\nCrop Type:\", crop_type_2)\n",
+    "print(\"\\nTemperature:\", temperature_2, \"degrees C\")\n",
+    "print(\"\\nUpdated Rainfall:\", rainfall_2, \"mm\")\n",
+    "print(\"\\nHumidity:\", humidity_2, \"%\")\n",
+    "print(\"\\nWind Speed:\", wind_speed_2, \"km/h\")\n",
+    "print(\"\\nRainfall Difference:\", rainfall_difference_2, \"mm\")\n",
+    "print(\"\\nTemperature Margin:\", temperature_margin_2, \"degrees C\")\n",
+    "print(\"\\nMinimum Rainfall Requirement:\", min_rainfall_required_2, \"mm\")\n",
+    "print(\"\\nMaximum Safe Temperature:\", max_safe_temperature_2, \"degrees C\")\n",
+    "print(\"\\nRainfall Requirement Met:\", rainfall_requirement_met_2)\n",
+    "print(\"\\nTemperature Within Safe Limit:\", temperature_within_safe_limit_2)\n",
+    "print(\"\\nIrrigation Available:\", irrigation_available_2)\n",
+    "print(\"\\nGrowing Conditions Favorable:\", growing_conditions_favorable_2)\n",
+    "print(\"\\nFarmer Action Required:\", farmer_action_required_2)\n",
+    "print(\"\\n==========================================================\\n\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "6f5531a5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "==========================================================\n",
+      "          COMPARATIVE FARM ANALYSIS: KADUNA vs BENUE\n",
+      "==========================================================\n",
+      "\n",
+      "Kaduna received more rainfall: True\n",
+      "Benue received more rainfall: False\n",
+      "\n",
+      "Kaduna has the safer (larger) temperature margin: True\n",
+      "Benue has the safer (larger) temperature margin: False\n",
+      "\n",
+      "Only Kaduna meets the rainfall requirement: True\n",
+      "Only Benue meets the rainfall requirement: False\n",
+      "Both farms meet the rainfall requirement: False\n",
+      "\n",
+      "Only Kaduna has favorable growing conditions: True\n",
+      "Only Benue has favorable growing conditions: False\n",
+      "\n",
+      "Only Kaduna requires immediate farm manager attention: False\n",
+      "Only Benue requires immediate farm manager attention: True\n",
+      "Both farms require immediate farm manager attention: False\n",
+      "\n",
+      "==========================================================\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ============================================================\n",
+    "# COMPARATIVE ANALYSIS BETWEEN THE TWO FARMS\n",
+    "# ============================================================\n",
+    "\n",
+    "# Which farm received more rainfall?\n",
+    "kaduna_has_more_rainfall = rainfall > rainfall_2\n",
+    "benue_has_more_rainfall = rainfall_2 > rainfall\n",
+    "\n",
+    "# Which farm has the safer temperature? (smaller temperature margin = closer to limit)\n",
+    "kaduna_has_safer_temperature = temperature_margin > temperature_margin_2\n",
+    "benue_has_safer_temperature = temperature_margin_2 > temperature_margin\n",
+    "\n",
+    "# Which farm meets the rainfall requirement?\n",
+    "only_kaduna_meets_rainfall = rainfall_requirement_met and (not rainfall_requirement_met_2)\n",
+    "only_benue_meets_rainfall = rainfall_requirement_met_2 and (not rainfall_requirement_met)\n",
+    "both_meet_rainfall = rainfall_requirement_met and rainfall_requirement_met_2\n",
+    "\n",
+    "# Which farm has favorable growing conditions?\n",
+    "only_kaduna_favorable = growing_conditions_favorable and (not growing_conditions_favorable_2)\n",
+    "only_benue_favorable = growing_conditions_favorable_2 and (not growing_conditions_favorable)\n",
+    "\n",
+    "# Which farm requires immediate attention from the farm manager?\n",
+    "only_kaduna_needs_action = farmer_action_required and (not farmer_action_required_2)\n",
+    "only_benue_needs_action = farmer_action_required_2 and (not farmer_action_required)\n",
+    "both_need_action = farmer_action_required and farmer_action_required_2\n",
+    "\n",
+    "print(\"==========================================================\")\n",
+    "print(\"          COMPARATIVE FARM ANALYSIS: KADUNA vs BENUE\")\n",
+    "print(\"==========================================================\\n\")\n",
+    "print(\"Kaduna received more rainfall:\", kaduna_has_more_rainfall)\n",
+    "print(\"Benue received more rainfall:\", benue_has_more_rainfall)\n",
+    "print(\"\\nKaduna has the safer (larger) temperature margin:\", kaduna_has_safer_temperature)\n",
+    "print(\"Benue has the safer (larger) temperature margin:\", benue_has_safer_temperature)\n",
+    "print(\"\\nOnly Kaduna meets the rainfall requirement:\", only_kaduna_meets_rainfall)\n",
+    "print(\"Only Benue meets the rainfall requirement:\", only_benue_meets_rainfall)\n",
+    "print(\"Both farms meet the rainfall requirement:\", both_meet_rainfall)\n",
+    "print(\"\\nOnly Kaduna has favorable growing conditions:\", only_kaduna_favorable)\n",
+    "print(\"Only Benue has favorable growing conditions:\", only_benue_favorable)\n",
+    "print(\"\\nOnly Kaduna requires immediate farm manager attention:\", only_kaduna_needs_action)\n",
+    "print(\"Only Benue requires immediate farm manager attention:\", only_benue_needs_action)\n",
+    "print(\"Both farms require immediate farm manager attention:\", both_need_action)\n",
+    "print(\"\\n==========================================================\\n\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "bdb775e4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "EXTENSION OFFICER RECOMMENDATION:\n",
+      "Benue requires the more urgent visit. Its temperature of 38 degrees C\n",
+      "exceeds the 35 degree safe maximum, its updated rainfall of 20mm still\n",
+      "falls short of the 25mm requirement, and it has no irrigation system\n",
+      "to compensate. Kaduna, by contrast, meets its rainfall requirement,\n",
+      "stays within its safe temperature range, and has irrigation available\n",
+      "as a backup, so its growing conditions are already favorable and it\n",
+      "does not need immediate action.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# ------------------------------------------------------------------\n",
+    "# Extension Officer's Written Answer (based on the analysis above)\n",
+    "# ------------------------------------------------------------------\n",
+    "print(\"EXTENSION OFFICER RECOMMENDATION:\")\n",
+    "print(\"Benue requires the more urgent visit. Its temperature of 38 degrees C\")\n",
+    "print(\"exceeds the 35 degree safe maximum, its updated rainfall of 20mm still\")\n",
+    "print(\"falls short of the 25mm requirement, and it has no irrigation system\")\n",
+    "print(\"to compensate. Kaduna, by contrast, meets its rainfall requirement,\")\n",
+    "print(\"stays within its safe temperature range, and has irrigation available\")\n",
+    "print(\"as a backup, so its growing conditions are already favorable and it\")\n",
+    "print(\"does not need immediate action.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "afe6ee72",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
